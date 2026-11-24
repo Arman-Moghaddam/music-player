@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.back-image{
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+}
+.image-filter{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    opacity: 0.2;
+}
+.container{
+    min-width: 1000px;
+    background-color: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: start;
+    padding: 20px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.item{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    box-shadow: 1px 1px 10px black;
+    background-image: url("../images/1l7egvas.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms;
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+    overflow: hidden;
+    
+}
+.item .name{
+    color: white;
+}
+.item-text{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms;
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+}
+.item:hover .item-text{
+    opacity: 1;
+    backdrop-filter: blur(10px);
+}
+.item:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    cursor: pointer;
+}
+.player{
+    position: absolute;
+    bottom: 70px;
+    background-color: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    min-width: 1000px;
+    animation: 0.5s player_anim;
+    -webkit-animation: 0.5s player_anim;
+    display: none;
+}
+.player__prog{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 5px;
+}
+.player__prog input{
+    accent-color: rgb(0,0,0);
+    /* accent-color: red; */
+    width: 100%;
+    cursor: pointer;
+}
+.player__prog span{
+    color: white;
+    font-size: 10px;
+}
+.player__control{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.control{
+    background-color: rgba(255,255,255,1);
+    padding: 5px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    outline: none;
+    border: none;
+    flex-grow: 1;
+    cursor: pointer;
+}
+@keyframes player_anim {
+    0%{
+        opacity: 0;
+        transform: translateY(300px);
+        -webkit-transform: translateY(300px);
+        -moz-transform: translateY(300px);
+        -ms-transform: translateY(300px);
+        -o-transform: translateY(300px);
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -o-transform: translateY(0px);
+}
+}
